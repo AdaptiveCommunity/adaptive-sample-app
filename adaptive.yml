@@ -1,0 +1,10 @@
+app:
+  name: adaptivesampleapp
+  id: me.adaptive.sample
+  version: 0.0.1
+adaptive:
+  version: v2.2.15
+
+  android:
+    version: 5.0
+

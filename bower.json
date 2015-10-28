@@ -1,0 +1,14 @@
+{
+  "name": "adaptivesampleapp",
+  "description": "Description for adaptivesampleapp",
+  "version": "0.0.0",
+  "appPath": "src",
+  "dependencies": {
+    "adaptiveme": "v2.2.15",
+    "modernizr": "2.8.3",
+    "jquery": "1.11.2",
+    "bootstrap": "3.3.1"
+  },
+  "devDependencies": {
+  }
+}
