@@ -1,10 +1,11 @@
-app:
-  name: adaptivesampleapp
-  id: me.adaptive.sample
-  version: 0.0.1
-adaptive:
+name: adaptivesampleapp
+appid: me.adaptive.sample
+version: 0.0.1
+engine:
+  name: adaptive
   version: v2.2.15
-
-  android:
+platforms:
+  - name: android
     version: 5.0
-
+    flavors: 
+        - mobile
