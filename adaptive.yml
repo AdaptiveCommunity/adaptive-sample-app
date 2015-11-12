@@ -6,6 +6,6 @@ engine:
   version: v2.2.15
 platforms:
   - name: android
-    version: 5.0
     flavors: 
-        - mobile
+      - name: mobile
+        version: 5.0
