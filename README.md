@@ -1,2 +1,2 @@
-# adaptive sample app
-adaptive sample app
+# adaptive-boilerplate-bootstrap
+Adaptive Boilerplate for Bootstrap projects

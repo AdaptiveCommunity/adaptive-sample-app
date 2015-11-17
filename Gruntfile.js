@@ -6,14 +6,20 @@ module.exports = function (grunt) {
 
     // Individual configurations for all the tasks
     grunt.initConfig({
-
+        
         typescript: {
             base: {
-                src: ['src/js/**/*.ts'],
-                dest: 'src/js/',
-                options: {declaration: false, sourceMap: false, module: 'commonjs', target: 'es5', basePath: 'src/js/',}
+              src: ['src/js/**/*.ts'],
+              dest: 'src/js/',
+              options: {
+                module: 'commonjs',
+                target: 'es5',
+                rootDir: 'src/js/',
+                sourceMap: false,
+                declaration: false
+              }
             }
-        },
+          },
 
         // Javascript validator. Skip files in '.jshintignore'
         jshint: {
@@ -77,6 +83,9 @@ module.exports = function (grunt) {
             config: {
                 files: [{expand: true, cwd: 'config', src: ['*.xml', '*.plist'], dest: 'dist/config'}]
             },
+            assets: {
+                files: [{expand: true, cwd: 'assets', src: ['*'], dest: 'dist/assets'}]
+            },
             config_file: {
                 files: [{expand: true, cwd: '', src: 'adaptive.yml', dest: 'dist'}]
             }
@@ -111,17 +120,12 @@ module.exports = function (grunt) {
                     {from: '../img/', to: 'img/'}
                 ]
             }
-        },
-
-        exec: {
-            nibble: 'nibble -p src -w true'
         }
     });
 
     grunt.registerTask('test', ['typescript', 'jshint', 'csslint']);
-    grunt.registerTask('nibble', 'exec:nibble');
     grunt.registerTask('build', ['test', 'clean:dist', 'useminPrepare', 'concat:generated', 'cssmin:generated',
-        'uglify:generated', 'copy:release', 'replace:html', 'copy:config', 'copy:config_file', 'filerev', 'usemin', 'htmlmin']);
+        'uglify:generated', 'copy:release', 'replace:html', 'copy:config', 'copy:assets', 'copy:config_file', 'filerev', 'usemin', 'htmlmin']);
 
     // alias tasks
     grunt.registerTask('dist', ['build']);

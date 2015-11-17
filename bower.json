@@ -1,7 +1,7 @@
 {
   "name": "adaptivesampleapp",
   "description": "Description for adaptivesampleapp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "appPath": "src",
   "dependencies": {
     "adaptiveme": "v2.2.15",
